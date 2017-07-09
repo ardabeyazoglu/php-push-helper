@@ -13,9 +13,7 @@ A php helper class to send push notifications to different services. Currently, 
 # Usage
 ```php
     $fcmApiKey = "YOUR_FCM_API_KEY";
-    $apnsCert = "YOUR_PRODUCTION_CERTIFICATE_PATH";
-    $apnsPass = "YOUR_PRODUCTION_CERTIFICATE_PASSPHRASE";
-
+    
     $push = new \Push\Client();
     $push->setFcm($fcmApiKey);
 
@@ -28,7 +26,7 @@ A php helper class to send push notifications to different services. Currently, 
      ));
 ```
 
-See [docs](https://github.com/ardabeyazoglu/php-push-helper/tree/master/docs) and [examples](https://github.com/ardabeyazoglu/php-push-helper/tree/master/examples)
+Please see the [docs](https://github.com/ardabeyazoglu/php-push-helper/tree/master/docs) and [examples](https://github.com/ardabeyazoglu/php-push-helper/tree/master/examples)
 
 # ToDo
 
