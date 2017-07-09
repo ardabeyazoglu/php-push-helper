@@ -21,13 +21,14 @@ $result = $push->using(\Push\Client::SERVICE_FCM)
 print_r($result);
 
 // send using apns
-/*
 $regToken = "YOUR_DEVICE_TOKEN";
 $result = $push->using(\Push\Client::SERVICE_APNS)
      ->emit($regToken, array(
-         "title" => "Test push title",
-         "body" => "That's it!",
+         "aps" => array(
+             "alert" => "Test push title",
+             "sound" => "default"
+         ),
+         "content" => "That's it!",
          "custom" => "my custom data"
      ));
 print_r($result);
-*/

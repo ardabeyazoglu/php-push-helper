@@ -22,10 +22,10 @@ class Fcm extends AbstractService {
     // get from abstract
     public function emit($to, array $data, array $options = array(), $platform = Client::PLATFORM_ANY){
         if(is_string($to) && preg_match('/(topics|\s)+/', $to) > 0){
-            return $this->emitByTopic($to, $data, $options, $platform);
+            return $this->_emitByTopic($to, $data, $options, $platform);
         }
         else{
-            return $this->emitByToken($to, $data, $options, $platform);
+            return $this->_emitByToken($to, $data, $options, $platform);
         }
     }
 
@@ -37,7 +37,7 @@ class Fcm extends AbstractService {
      * @param string $platform check constants for available platforms
      * @return array|mixed
      */
-    public function emitByToken($to, array $data, array $options = array(), $platform = Client::PLATFORM_ANY){
+    private function _emitByToken($to, array $data, array $options = array(), $platform = Client::PLATFORM_ANY){
         if(!is_array($to)){
             $to = array($to);
         }
@@ -72,7 +72,7 @@ class Fcm extends AbstractService {
      * @param string $platform data structure can be different for different platforms
      * @return array|mixed
      */
-    public function emitByTopic($to, array $data, array $options = array(), $platform = Client::PLATFORM_ANY){
+    private function _emitByTopic($to, array $data, array $options = array(), $platform = Client::PLATFORM_ANY){
         $toKey = substr($to, 0, 8) === "/topics/" ? "to" : "condition";
 
         $message = array(

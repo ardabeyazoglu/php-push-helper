@@ -1,10 +1,36 @@
 # About
-A php class to send push notification to different services
+A php helper class to send push notifications to different services. Currently, it only supports `APNS` and Google's `FCM`.
 
-# Dependencies & Installation
-- Curl extension must be installed
+# Features
+
+- By using `APNS`, you can emit messages to iOS
+- By using `FCM`, You can emit messages to iOS, Android, Browsers (Service Workers) or any client listening `Firebase Messaging Service`
+    - Creates `data payloads` based on the rules specified in [phonegap-push-plugin](https://github.com/phonegap/phonegap-plugin-push).
+
+# Installation
+    composer install ardabeyazoglu/php-push-helper
 
 # Usage
+```php
+    $fcmApiKey = "YOUR_FCM_API_KEY";
+    $apnsCert = "YOUR_PRODUCTION_CERTIFICATE_PATH";
+    $apnsPass = "YOUR_PRODUCTION_CERTIFICATE_PASSPHRASE";
 
-# Roadmap
+    $push = new \Push\Client();
+    $push->setFcm($fcmApiKey);
+
+    // send using fcm
+    $regToken = "YOUR_DEVICE_TOKEN";
+    $result = $push->emit($regToken, array(
+         "title" => "Test push title",
+         "body" => "That's it!",
+         "custom" => "my custom data"
+     ));
+```
+
+See [docs](https://github.com/ardabeyazoglu/php-push-helper/tree/master/docs) and [examples](https://github.com/ardabeyazoglu/php-push-helper/tree/master/examples)
+
+# ToDo
+
 - More services to integrate (Window Phone 8, UWP, Web Push etc.)
+- Writing a helper class to produce json payloads
