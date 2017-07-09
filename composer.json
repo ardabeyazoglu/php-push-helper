@@ -1,0 +1,18 @@
+{
+  "name": "ardabeyazoglu/php-push-helper",
+  "description": "A simple helper library to send push notifications in php",
+  "type": "library",
+  "keywords": ["push", "notification", "fcm", "gcm", "apns", "aps", "firebase-messaging"],
+  "homepage": "https://github.com/ardabeyazoglu/php-push-helper",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.3.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Push\\": "src/"
+    }
+  }
+}
