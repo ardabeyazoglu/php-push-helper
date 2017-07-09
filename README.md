@@ -1,3 +1,5 @@
+[![Latest Stable Version](https://poser.pugx.org/ardabeyazoglu/php-push-helper/v/stable)](https://packagist.org/packages/ardabeyazoglu/php-push-helper) [![License](https://poser.pugx.org/ardabeyazoglu/php-push-helper/license)](https://packagist.org/packages/ardabeyazoglu/php-push-helper)
+
 # About
 A php helper class to send push notifications to different services. Currently, it only supports `APNS` and Google's `FCM`.
 
