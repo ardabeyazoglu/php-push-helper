@@ -1,4 +1,4 @@
-<?
+<?php
 
 namespace Push\Service;
 use Push\Client;
